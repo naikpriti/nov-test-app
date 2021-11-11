@@ -26,12 +26,12 @@ jobs:
  
       - name: docker login
         env:
-          DOCKER_USER: ${{secrets.DOCKER_USER}}
+          DOCKER_USER: ${{secrets.DOCKERHUB_USERNAME}}
           DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
         run: |
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - name: Build the docker image
         run: docker build . -f  ./action-a/Dockerfile --tag naikpriti/node-test:$(date +%s)
       - name: Docker Push
-        run: docker push ${{secrets.DOCKER_USER}}/node-test
+        run: docker push ${{secrets.DOCKERHUB_USERNAME}}/node-test
       
