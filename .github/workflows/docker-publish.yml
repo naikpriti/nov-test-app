@@ -31,7 +31,7 @@ jobs:
         run: |
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - name: Build the docker image
-        run: docker build . -f  ./action-a/Dockerfile --tag naikpriti/node-test:$(date +%s)
+        run: docker build . -f  ./action-a/Dockerfile --tag naikpriti/node-test:first
       - name: Docker Push
-        run: docker push naikpriti/node-test
+        run: docker push naikpriti/node-test:first
       
