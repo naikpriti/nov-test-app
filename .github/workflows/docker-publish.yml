@@ -33,5 +33,5 @@ jobs:
       - name: Build the docker image
         run: docker build . -f  ./action-a/Dockerfile --tag naikpriti/node-test:$(date +%s)
       - name: Docker Push
-        run: docker push ${{secrets.DOCKERHUB_USERNAME}}/node-test
+        run: docker push naikpriti/node-test
       
